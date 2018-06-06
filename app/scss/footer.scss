@@ -91,6 +91,7 @@
 		transition: opacity 0.5s ease;
 		&:hover {
 			opacity: 1;
+			cursor: pointer;
 		}
 		@media only screen and (max-width: 768px) {
 			width: 50px;

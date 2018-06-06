@@ -52,23 +52,53 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	transition: background-color 0.5s ease;
-	&:hover {
+	transition: all 0.5s ease;
+	/*&:hover {
 		background-color: rgba($violet, 0.6);
 		a {
 			color: #FFF;
 		}
-	}
-	&:active {
-		background-color: $violet;
-		a {
-			color: #FFF;
-		}
-	}
-	a {
-		text-transform: uppercase;
+	}*/
+	&.active a {
 		color: $violet;
+		opacity: 1;
+		font-weight: 600;
 	}
+	&.active img {
+		opacity: 1;
+	}
+}
+
+.navbar__item a, .navbar__item img {
+	text-transform: uppercase;
+	color: $violet;
+	opacity: 0.6;
+	position: relative;
+	padding: 6px 0;
+	transition: all 0.25s ease;
+	&:after {
+		transition: all 0.25s ease;
+		position: absolute;
+	  bottom: 0;
+	  left: 0;
+	  right: 0;
+	  margin: auto;
+	  width: 0%;
+	  content: '.';
+	  color: transparent;
+	  background: #aaa;
+	  height: 1px;
+	}
+	&:hover {
+		opacity: 1;
+	}
+	&:hover:after {
+		width: 100%;
+	}
+}
+
+.navbar__home {
+	width: 90px;
 }
 
 .navbar__devider {
