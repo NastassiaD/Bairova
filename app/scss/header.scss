@@ -31,6 +31,28 @@
 	height: 350px;
 	margin-top: -175px;
 	text-align: center;
+	position: relative;
+	opacity: 0.9;
+	&:before {
+		position: absolute;
+		content: '';
+		width: 340px;
+		height: 340px;
+		border: 0.8px solid rgba($violet, 0.4);
+		border-radius: 50%;
+		top: 4px;
+		right: 4px;
+		@media only screen and (max-width: 480px) {
+			width: 240px;
+			height: 240px;
+		}
+		@media only screen and (min-width: 2150px) {
+			width: 480px;
+			height: 480px;
+			top: 10px;
+			right: 10px;
+		}
+	}
 	@media only screen and (max-width: 768px) {
 		margin-top: 0;
 	}
@@ -47,12 +69,35 @@
 }
 
 .header__bairova {
-	margin-top: 210px;
+	margin-top: 200px;
+	width: 250px;
 	@media only screen and (max-width: 768px) {
 		margin-top: 40%;
+		width: 200px;
 	}
 	@media only screen and (min-width: 2150px) {
 		margin-top: 300px;
+		width: 350px;
+	}
+}
+
+.header__mission {
+	margin-top: 0;
+	font-size: 17px;
+	color: darken($violet, 20%);
+	@media only screen and (max-width: 768px) {
+		font-size: 15px;
+	}
+	@media only screen and (min-width: 2150px) {
+		font-size: 20px;
+	}
+}
+
+.header__dot {
+	opacity: 0.9;
+	margin: 3px;
+	@media only screen and (max-width: 480px) {
+		margin: 2px;
 	}
 }
 
@@ -93,30 +138,33 @@
 .header__button {
 	position: absolute;
 	right: 0;
+	padding: 15px 25px;
+	font-size: 17px;
+}
+
+.request-button {
+	white-space: nowrap;
 	display: flex;
 	align-items: center;
+	justify-content: center;
+	background-color: $accent;
+	color: #fff;
+	border-radius: 50px;
+	border: 0px;
+	transition: all 0.2s ease;
 	img {
 		width: 28px;
 		margin-right: 7px;
 	}
-}
-
-.request-button {
-	background-color: $accent;
-	color: #fff;
-	font-size: 17px;
-	border-radius: 50px;
-	border: 0px;
-	padding: 15px 25px;
-	transition: all 0.2s ease;
 	&:hover {
 		cursor: pointer;
 		-webkit-transform: scale(1.09);
   	-ms-transform: scale(1.09);
 		transform: scale(1.09);
 	}
-	@media only screen and (max-width: 1150px) {
-		padding: 15px 25px;
+	@media only screen and (min-width: 2150px) {
+		padding: 25px 35px;
+		font-size: 21px;
 	}
 }
 

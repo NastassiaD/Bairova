@@ -25,12 +25,13 @@
     <button class="mobmenu__toggle"></button>
     <nav>
       <ul class="mobmenu_navigation">
-        <li><a href="#">Главная</a></li>
-        <li><a href="#">Портфолио</a></li>
-        <li><a href="#">Обучение</a></li>
-        <li><a href="#">О художнике</a></li>
-        <li><a href="#">Контакты</a></li>
-        <li><a href="#">События</a></li>
+        <li class="mobmenu__item mobmenu__item--active"><a href="#">Главная</a></li>
+        <li class="mobmenu__item"><a href="#">Портфолио</a></li>
+        <li class="mobmenu__item"><a href="#">Обучение</a></li>
+        <li class="mobmenu__item"><a href="#">О художнике</a></li>
+        <li class="mobmenu__item"><a href="#">Контакты</a></li>
+        <li class="mobmenu__item"><a href="#">События</a></li>
+        <li class="mobmenu__item"><button class="mobmenu__button request-button"><img src="img/ic-palette.svg">Заявка на обучение</button></li>
       </ul>
     </nav>
   </div>
@@ -42,8 +43,8 @@
 
     <div class="header__wrapper">
       <div class="header__artist">
-        <p class="header__bairova">Людмила Баирова</p>
-        <p class="header__mission">художник, учитель, дизайнер</p>
+        <img src="img/artist-name-violet.svg" class="header__bairova"></img>
+        <p class="header__mission">художник <img src="img/dot.svg" class="header__dot"> учитель <img src="img/dot.svg" class="header__dot"> дизайнер</p>
       </div>
 
       <div class="header__footer">
@@ -62,7 +63,7 @@
     <div class="navbar__wrapper">
 
       <ul class="navbar__list">
-        <li class="navbar__item active"><a href="#"><img src="img/LB.svg" class="navbar__home"></a></li>
+        <li class="navbar__item navbar__item--active"><a href="#"><img src="img/LB.svg" class="navbar__home"></a></li>
         <li class="navbar__item"><a href="#">Портфолио</a></li>
         <li class="navbar__item"><a href="#">Обучение</a></li>
         <li class="navbar__item"><a href="#">О художнике</a></li>
@@ -145,7 +146,7 @@
         <div class="footer__mini-wrapper">
           <div class="footer__phone">
             <img src="img/phone.svg">
-            <p>+375 29 509 10 17 <span class="footer__messengers">(Viber, Telegram)</span></p>
+            <p class="footer__phone-number">+375 29 509 10 17 <span class="footer__messengers">(Viber, Telegram)</span></p>
           </div>
           <div class="footer__mail">
             <img src="img/mail.svg">

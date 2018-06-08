@@ -8,14 +8,12 @@
 .footer__wrapper {
 	width: 740px;
 	height: auto;
-	max-width: 1000px;
 	margin: 0 auto;
 	padding: 70px 0 60px;
 	position: relative;
 	display: flex;
 	flex-wrap: nowrap;
 	color: #FFF;
-	font-size: 19px;
 	@media only screen and (max-width: 768px) {
 		width: 80%;
 		flex-wrap: wrap;
@@ -23,7 +21,11 @@
 	}
 	@media only screen and (min-width: 1150px) {
 		width: 1000px;
-		font-size: 19px;
+		font-size: 18px;
+	}
+	@media only screen and (min-width: 2150px) {
+		width: 1250px;
+		font-size: 21px;
 	}
 }
 
@@ -55,6 +57,13 @@
 	img {
 		width: 36px;
 		margin-right: 17px;
+	}
+}
+
+.footer__phone-number {
+	@media only screen and (max-width: 768px) {
+		display: flex;
+		flex-direction: column;
 	}
 }
 
@@ -144,6 +153,9 @@
 	font-size: 17px;
 	@media only screen and (max-width: 768px) {
 		font-size: 15px;
+	}
+	@media only screen and (min-width: 2150px) {
+		font-size: 21px;
 	}
 }
 

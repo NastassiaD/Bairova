@@ -24,7 +24,6 @@
 
 .navbar__wrapper {
 	width: 740px;
-	max-width: 1000px;
 	margin: 0 auto;
 	position: relative;
 	@media only screen and (max-width: 768px) {
@@ -32,6 +31,9 @@
 	}
 	@media only screen and (min-width: 1150px) {
 		width: 1000px;
+	}
+	@media only screen and (min-width: 2150px) {
+		width: 1250px;
 	}
 }
 
@@ -43,6 +45,10 @@
 	align-items: center;
 	height: 80px;
 	list-style-type: none;
+	font-size: 16px;
+	@media only screen and (min-width: 2150px) {
+		font-size: 20px;
+	}
 }
 
 .navbar__item {
@@ -59,12 +65,12 @@
 			color: #FFF;
 		}
 	}*/
-	&.active a {
+	&.navbar__item--active a {
 		color: $violet;
 		opacity: 1;
 		font-weight: 600;
 	}
-	&.active img {
+	&.navbar__item--active img {
 		opacity: 1;
 	}
 }
@@ -99,6 +105,9 @@
 
 .navbar__home {
 	width: 90px;
+	@media only screen and (min-width: 2150px) {
+		width: 110px;
+	}
 }
 
 .navbar__devider {

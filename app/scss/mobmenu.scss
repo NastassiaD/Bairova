@@ -45,21 +45,24 @@ $color-lite: lighten($color, 10%);
 /*mobmenu*/
 
 .mobmenu {
-	@media only screen and (min-width: 768px) {
+  position: fixed;
+  height: 60px;
+  background-color: rgba($violet, 0.9);
+  width: 100%;
+  z-index: 300;
+  display: flex;
+  justify-content: center;
+	@media only screen and (min-width: 769px) {
 		display: none;
 	}
 }
 
 .mobmenu__toggle {
-	opacity: 0.6;
   background-color: transparent;
-  position: fixed;
   z-index: 2;
-  top: 24px;
-  left: 24px;
   border: none;
-  width: 36px;
-  height: 30px;
+  width: 100%;
+  height: 100%;
   outline: none;
   transition: opacity 0.2s ease-out;
   &:before {
@@ -67,33 +70,24 @@ $color-lite: lighten($color, 10%);
     @include position-center;
     right: auto;
     width: 100%;
-    background: linear-gradient(
-      to bottom,
-      $color, $color 20%,
-      transparent 20%, transparent 40%,
-      $color 40%, $color 60%,
-      transparent 60%, transparent 80%,
-      $color 80%, $color 100%
-    );
+    background-image: url(../img/icon-burger.svg);
+    background-position: center;
+    background-repeat: no-repeat;
     transition: opacity 0.2s ease-out, width 0.2s 0.2s ease-out;
   }
   &:after {
     opacity: 0;
-    content: '×';
-    color: white;
-    position: absolute;
-    top: 16px;
-    left: -4px;
-    font-family: Arial, sans-serif;
-    font-size: 76px;
-    line-height: 0;
+    content: "";
+    @include position-center;
+    right: auto;
+    width: 100%;
+    background-image: url(../img/icon-close.svg);
+    background-position: center;
+    background-repeat: no-repeat;
     transition: opacity 0.4s ease-out;
   }
   &:active {
     transform: translateY(2px);
-  }
-  &:hover {
-    opacity: 1;
   }
   .open & {
     opacity: 1;
@@ -112,7 +106,8 @@ $color-lite: lighten($color, 10%);
 .mobmenu nav {
 	z-index: 1;
   position: fixed;
-  top: -100%; left: 0;
+  top: -100%;
+  left: 0;
   width: 100%;
   height: 100%;
   transform: translate3d(0,0,0);
@@ -121,7 +116,10 @@ $color-lite: lighten($color, 10%);
   &:before {
     content: '';
     @include position-center;
-    background: rgba($color-dark, 0.98);
+    background-color: $violet;
+    background-image: url(../img/mobmenu-background.png);
+    background-repeat: no-repeat;
+    background-size: cover;
     width: 100%;
     height: 0;
     padding-bottom: 100%;
@@ -138,6 +136,8 @@ $color-lite: lighten($color, 10%);
 }
 
 .mobmenu_navigation {
+  display: flex;
+  flex-direction: column;
 	position: fixed;
   top: 50%;
   left: 50%;
@@ -145,10 +145,10 @@ $color-lite: lighten($color, 10%);
   transform: translate3d(-50%,-50%,0);
   backface-visibility: hidden;
   perspective: 1000;
-  color: white;
 }
 
 .mobmenu_navigation li {
+  margin: 10px 0;
 	opacity: 0;
   text-align: center;
   transform: translate3d(0,36px,0);
@@ -156,7 +156,6 @@ $color-lite: lighten($color, 10%);
     content: '';
     @include position-center;
     left: auto;
-    background-color: white;
     height: 100%;
     width: 0;
     overflow: hidden;
@@ -188,8 +187,40 @@ $color-lite: lighten($color, 10%);
     opacity: 1;
     transform: translate3d(0,0,0);
     transition: transform 0.2s ease-out, opacity 0.2s ease-out;
-    @for $i from 1 to 7 {
+    @for $i from 1 to 8 {
       &:nth-child(#{$i}) { transition-delay: $i * 0.1s + 0.65s; }
     }
+  }
+  @media only screen and (min-width: 400px) {
+    margin: 16px 0;
+  }
+  @media only screen and (min-width: 599px) {
+    margin: 20px 0;
+  }
+}
+
+.mobmenu_navigation li a {
+  color: white;
+  font-size: 15px;
+  text-transform: uppercase;
+  @media only screen and (min-width: 400px) {
+    font-size: 20px;
+  }
+  @media only screen and (min-width: 599px) {
+    font-size: 22px;
+  }
+}
+
+.mobmenu__button {
+  margin-top: 30px;
+  padding: 15px 20px;
+  font-size: 18px;
+  @media only screen and (min-width: 400px) {
+    font-size: 22px;
+    padding: 20px 30px;
+  }
+  @media only screen and (min-width: 599px) {
+    font-size: 24px;
+    padding: 30px 35px;
   }
 }
